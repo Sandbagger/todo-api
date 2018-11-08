@@ -1,6 +1,12 @@
 var express = require('express'),
-	app = express();
+	app = express(),
+	port = 3000;
 
-app.listen(3000, function(){
-	console.log("Express server is running")
+app.get('/', function (req, res){
+	res.send("Hello world!")
 })
+
+app.listen(port, function(){
+	console.log("Express server is running on " + port)
+})
+
