@@ -3,10 +3,10 @@ var express = require('express'),
 	port = 3000;
 
 app.get('/', function (req, res){
-	res.send("Hello world!")
+	res.json({"greeting":"Hello world!"})
 })
 
 app.listen(port, function(){
-	console.log("Express server is running on " + port)
+	console.log("Express server is running on port " + port)
 })
 
