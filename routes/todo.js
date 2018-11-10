@@ -1,34 +1,35 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../models');
+const express = require('express');
+const router = express.Router();
+const db = require('../models');
 
-router.get('/', function(req, res){
+router.get('/', (req, res)=>{
     db.Todo.find()
-    .then(function(todos){
+    .then((todos)=>{
         res.json(todos)
-    }).catch(function(err){
+    }).catch((err)=>{
         res.send(err);
     })
 })
 
-router.post('/', function(req, res){
+router.post('/',(req, res)=>{
     db.Todo.create(req.body)
     .then((todo)=>{
         res.status(201).json(todo)
     } )
-    .catch(function(err){
+    .catch((err)=>{
         res.send(err);
     })
 });
 
-router.delete('/:id', function(req, res){
+router.delete('/:id', (req, res)=>{
     db.Todo.remove({_id: req.params.id})
-        .then(function(){
+        .then(()=>{
             res.json({message: "Todo has been deleted"})
         })
-        .catch(function(err){
+        .catch((err)=>{
             res.send(err)
         })
 });
+
 
 module.exports = router;
