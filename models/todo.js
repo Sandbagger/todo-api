@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 
 var todoSchema = new mongoose.Schema({
-    name: {String,
-    required: 'Name is a required field'
+    name: {
+       type: String,
+        required:"Name is a required field",
     },
     completed: {
         type: Boolean,
