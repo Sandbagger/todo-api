@@ -11,4 +11,14 @@ router.get('/', function(req, res){
     })
 })
 
+router.post('/', function(req, res){
+    db.Todo.create(req.body)
+    .then((todo)=>{
+        res.status(201).json(todo)
+    } )
+    .catch(function(err){
+        res.send(err);
+    })
+});
+
 module.exports = router;
