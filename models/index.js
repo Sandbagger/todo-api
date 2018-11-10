@@ -1,8 +1,8 @@
 //When models dir is required it will look for this file first.
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.set('debug', true); //catches errors
 mongoose.connect('mongodb://localhost/todo-api');
 
 mongoose.Promise = Promise;
 
-module.exports.Todo = require("./todo")
+module.exports.Todo = require("./todo");
