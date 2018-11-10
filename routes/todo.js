@@ -22,6 +22,13 @@ router.post('/', function(req, res){
 });
 
 router.delete('/:id', function(req, res){
-    res.send("Delete")
-})
+    db.Todo.remove({_id: req.params.id})
+        .then(function(){
+            res.json({message: "Todo has been deleted"})
+        })
+        .catch(function(err){
+            res.send(err)
+        })
+});
+
 module.exports = router;
