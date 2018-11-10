@@ -1,8 +1,9 @@
-var express = require('express'),
+const express = require('express'),
 	app = express(),
 	port = 3000;
-	bodyParser = require('body-parser');
-var todoRoutes = require('./routes/todo');
+	bodyParser = require('body-parser'),
+	todoRoutes = require('./routes/todo');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
