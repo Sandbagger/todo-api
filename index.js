@@ -1,4 +1,5 @@
 const express = require('express'),
+	cors = require('cors'),
 	app = express(),
 	port = 3000;
 	bodyParser = require('body-parser'),
@@ -7,6 +8,7 @@ const express = require('express'),
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors());
 
 app.get('/', function (req, res){
 	res.send('Root route')
